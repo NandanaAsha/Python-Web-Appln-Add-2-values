@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the app.zip file from the current directory to the /app directory in the container
 COPY app.zip .
 
+# Copy the requirements file to the working directory
+COPY requirements.txt .
+
 # Install unzip utility to extract the app.zip file
 RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
 
