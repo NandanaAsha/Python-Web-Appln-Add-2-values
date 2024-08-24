@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y unzip && rm -rf /var/lib/apt/lists/*
 RUN unzip app.zip
 
 # Install dependencies from requirements.txt
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Expose the port that the Flask app will run on
 EXPOSE 5000
