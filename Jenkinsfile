@@ -1,9 +1,9 @@
 pipeline {
     agent any
     
-    environment {
+   // environment {
         // Define any environment variables here if needed
-    }
+   // }
     
     stages {
         stage('Clone repo') {
