@@ -1,6 +1,8 @@
 
 git clone 'https://github.com/NandanaAsha/python-web-appln.git'
 cd python-web-appln
+
+Refer Dockerfile1 --> Use python code directly to build docker image
 docker build -t pythonwebimg .
 docker run -d --name pythonwebcont -P pythonwebimg
 
