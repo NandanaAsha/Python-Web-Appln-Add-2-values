@@ -1,0 +1,15 @@
+
+git clone 'https://github.com/NandanaAsha/python-web-appln.git'
+cd python-web-appln
+docker build -t pythonwebimg .
+docker run -d --name pythonwebcont -P pythonwebimg
+
+Browse appln in below http path:
+http://3.23.64.40:32769/add?a=5&b=3   ie. http://public ip of docker host:mapped port/user input
+
+Browser page displayed:
+{"sum": 8}.
+
+
+
+
