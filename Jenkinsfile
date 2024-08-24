@@ -16,7 +16,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Install dependencies from requirements.txt
-                sh 'yum install python3 python3-pip'
+                sh 'sudo yum install python3 python3-pip'
                 sh 'pip3 install -r requirements.txt'
             }
         }
