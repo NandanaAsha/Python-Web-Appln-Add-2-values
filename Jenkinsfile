@@ -9,7 +9,7 @@ pipeline {
         stage('Clone repo') {
             steps {
                 // Checkout the source code from the repository
-                git 'https://github.com/NandanaAsha/python-web-appln.git'
+                git branch: 'main', url: 'https://github.com/NandanaAsha/python-web-appln.git'
             }
         }
         
