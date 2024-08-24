@@ -1,8 +1,8 @@
 
 git clone 'https://github.com/NandanaAsha/python-web-appln.git'
 cd python-web-appln
-
-Refer Dockerfile1 --> Use python code directly to build docker image
+---------------------------------------------------------------------------------------------------------------
+Refer Dockerfile1 --> Use python code directly to build custom image
 docker build -t pythonwebimg .
 docker run -d --name pythonwebcont -P pythonwebimg
 
@@ -10,8 +10,15 @@ Browse appln in below http path:
 http://3.23.64.40:32769/add?a=5&b=3   ie. http://public ip of docker host:mapped port/user input
 
 Browser page displayed:
-{"sum": 8}.
+{"sum":8.0}
+----------------------------------------------------------------------------------------------------------------
+Refer Dockerfile  --> Use artifact from package step to build custom image
+docker build -t pythonwebimg .
+docker run -d --name pythonwebcont -P pythonwebimg
 
+Browse appln in below http path:
+http://3.23.64.40:32770/add?a=5&b=3
 
-
+Browser page displayed:
+{"sum":8.0}
 
