@@ -38,14 +38,14 @@ pipeline {
         stage('Build image') {
             steps {
                 // Package the application into a zip file
-                sh 'docker build -t pythonwebimg:$BUILD_NUMBER .'
+                sh 'docker build -t pythonwebimg:V$BUILD_NUMBER .'
             }
         }
         
         stage('Deploy application to container') {
             steps {
                 // Package the application into a zip file
-                sh 'docker run -d --name pythonwebcont:$BUILD_NUMBER -P pythonwebimg'
+                sh 'docker run -d --name pythonwebcont_$BUILD_NUMBER -P pythonwebimg:V$BUILD_NUMBER'
             }
         }
     }
