@@ -34,6 +34,20 @@ pipeline {
                 sh 'zip -r app.zip app.py'
             }
         }
+
+        stage('Build image') {
+            steps {
+                // Package the application into a zip file
+                sh 'docker build -t pythonwebimg:$BUILD_NUMBER .'
+            }
+        }
+        
+        stage('Deploy application to container') {
+            steps {
+                // Package the application into a zip file
+                sh 'docker run -d --name pythonwebcont:$BUILD_NUMBER -P pythonwebimg'
+            }
+        }
     }
     
     post {
@@ -44,12 +58,12 @@ pipeline {
         
         success {
             // Additional actions on success
-            echo 'Build succeeded!'
+            echo 'Build and deployment to container succeeded!'
         }
         
         failure {
             // Additional actions on failure
-            echo 'Build failed!'
+            echo 'Build or deployment to container failed!'
         }
     }
 }
